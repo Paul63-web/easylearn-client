@@ -1,0 +1,80 @@
+<mat-dialog-content *ngIf="data.option==1">
+  <mat-progress-bar class="spinner" *ngIf="inprogress"></mat-progress-bar>
+  <h4 class="text-center">Edit Course Details</h4>
+  <form [formGroup]="courseDetails">
+    <div class="form-group mb-2">
+      <label for="">Edit course name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="form-group mb-2">
+      <label for="">Edit course cover image</label>
+      <input type="file" class="form-control" name="coverImage" (change)="onCoverImageChange($event)">
+    </div>
+    <div class="form-group mb-2">
+      <label for="">Edit course description</label>
+      <input type="text" class="form-control" formControlName="description">
+    </div>
+    <div class="form-group">
+      <button mat-raised-button style="background-color: rgb(254, 101, 12); color: #fff;" (click)="saveCourse()">Save Changes</button>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-content *ngIf="data.option==4 && resourceId==''" class="resources">
+  <span class="text-center text-danger">{{message}}</span>
+  <div class="d-md-flex"></div>
+  <div *ngFor="let resource of resources" class="d-flex">
+    <div class="">
+      <span class="m-2 fw-bold">{{resource.resourceName}}</span> <br>
+      <small class="type">{{resource.resourceType}}</small>
+    </div>
+    <div>
+      <span class="material-symbols-outlined" type="button" (click)="editResource(resource._id)">
+        edit_square
+      </span>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-content *ngIf="resourceId">
+  <h4 class="text-center">Edit Resource</h4>
+  <span>{{message}}</span>
+  <mat-progress-bar class="spinner" *ngIf="inprogress"></mat-progress-bar>
+
+  <form [formGroup]="resourceDetails">
+    <div class="form-group mb-2">
+      <label for="">Edit resource name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="form-group mb-2">
+      <label for="">Edit resource file</label>
+      <input type="file" class="form-control" name="resourceFile" (change)="onResourceFileChange($event)">
+    </div>
+    
+    <div class="form-group">
+      <button mat-raised-button style="background-color: rgb(254, 101, 12); color: #fff;" (click)="saveResource()">Save Changes</button>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-content *ngIf="data.option==3">
+  <mat-progress-bar class="spinner" *ngIf="inprogress"></mat-progress-bar>
+  <h4 class="text-center">Edit Course Price</h4>
+  <form [formGroup]="priceDetails">
+    <div class="form-group mb-2">
+      <label for="">Edit course price</label>
+      <input type="text" class="form-control" formControlName="price" value="{{courseId}}">
+    </div>
+    <div class="form-group">
+      <button mat-raised-button style="background-color: rgb(254, 101, 12); color: #fff;" (click)="savePrice()">Save Changes</button>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-content *ngIf="data.option==5">
+  <p>Are you sure you want to delete this course?</p>
+  <div class="container-fluid w-100">
+    <button class="w-50" mat-flat-button (click)="nullifyDelete()">No</button>
+    <button class="w-50" mat-flat-button color="warn" (click)="delete(data.courseId)">Yes</button>
+  </div>
+</mat-dialog-content>

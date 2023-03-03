@@ -1,0 +1,29 @@
+<div class="container" style="margin-top: 100px;">
+  <mat-progress-bar mode="query" style="margin-top: -35px;" *ngIf="loading"></mat-progress-bar>
+  <div class="container mx-auto row">
+    <h2 style="font-size: 25px;">Courses</h2>
+  </div>
+  
+  <div class="container row mx-auto" *ngIf="!loading">
+    <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-4" *ngFor="let i = index; let course of allCourses">
+      <div class="card hover h-100">
+        <img src={{course.coverImage}} class="card-img-top" style="height: 145px; object-fit: cover" alt="...">
+        <div class="card-body">
+          <div class="d-flex">
+            <p class="course-title me-auto" style="font-weight: 500; font-size: 20px;">{{course.courseName}} </p>
+            <p class="course-paid ms-auto" style="font-weight: 500; font-size: 15px;">
+              <!-- {{course.free_paid | }}  -->
+              <!-- &#8358; -->
+              {{"2000" | currency:"NGN":"symbol"}}</p>
+          </div>  
+          <small class="card-text" style="font-size: 15px;">{{course.courseDescription}}</small>
+          <div class="course-info mt-4 mb-auto d-flex w-100">
+            <mat-icon class="me-auto" style="color: rgb(254, 101, 12);">layers</mat-icon>
+            <button class="btn btn-sm text-light ms-auto" style="background-color: rgb(254, 101, 12)" (click)="addToCart(course)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="openSnackBar('Item deleted', 'close')">Open snackbar</button>
+</div>
