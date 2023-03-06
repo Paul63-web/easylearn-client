@@ -46,7 +46,7 @@ export class CartComponent implements OnInit {
           this.cart = res.cart;          
           console.log("Cart is not empty")
         } else if(res.cart.length == 0) {
-          // this.cartLength = true;
+          this.cart = res.cart;          
           this.cartLengthIsEmpty = true;
           console.log("Cart is empty");
         }
@@ -71,10 +71,10 @@ export class CartComponent implements OnInit {
     let newCart = this.cart.reduce(function(sum, current) {
       return sum + current.quantity;
     }, 0)
-    // this.cartLengthIsEmpty = newCart;
   }
 
- addRemove(_id) {
+  addRemove(_id) {
+   this.cart.find((course,_id)=>(course._id ===_id));
     this._cartService.deleteFromCart({_id}).subscribe((res: any) => {
       if(res.status == false) {
       console.log(res.message)
@@ -84,7 +84,6 @@ export class CartComponent implements OnInit {
         this.loading = false;
       }
     })
-    this.cart.find((course,_id)=>(course._id ===_id));
   }
 
   addToCart(course: any) {

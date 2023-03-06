@@ -1,13 +1,12 @@
 <app-navbar></app-navbar>
-  <div class="grid-container container">
+  <div class="grid-container container" data-aos=fade-down>
     <div class="container w-100 shadow-sm">
       <div class="row">
         <div class="col-5 d-none d-md-block image-col">
 
         </div>
         <div class="col-12 col-md-7">
-          <mat-progress-bar class="d-none d-md-block" *ngIf="loading" mode="indeterminate" style="width: 759px; margin-left: -12px; height: 3px;"></mat-progress-bar>
-          <mat-progress-bar class="d-block d-md-none" *ngIf="loading" mode="indeterminate" style="width: 412px; margin-left: -12px; height: 3px;"></mat-progress-bar>
+          <mat-progress-bar class="w-100" *ngIf="loading" mode="indeterminate" style="height: 3px;"></mat-progress-bar>
           <div class="container p-4">
             <h1 class="register-h1">Sign up</h1>
             <div class="w-25" style="border: 1px solid rgb(255,90,44); margin-top: -2px; color: rgb(255,90,44);"></div>

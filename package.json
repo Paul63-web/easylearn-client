@@ -3,14 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4093 --open",
+    "start": "ng serve --port 4093 --open --hmr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
-    "@angular-material-components/file-input": "^8.0.0",
     "@angular/animations": "~12.1.0-",
     "@angular/cdk": "^12.2.13",
     "@angular/common": "~12.1.0-",
@@ -23,6 +22,7 @@
     "@angular/router": "~12.1.0-",
     "angular-paystack": "^1.0.0",
     "angular4-paystack": "^3.0.2",
+    "aos": "^2.3.4",
     "bootstrap": "^5.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",

@@ -54,16 +54,15 @@ export class EnrollForACourseComponent implements OnInit {
 
   addToCart(course: any) {
     this._cartService.addToCart(course).subscribe((res:any)=> {
-      if(res.status == false) {
+      if(res.itemAlreadyInCart == true) {
         this.errorMessageStatus = true;
-        alert(res.message)
-
+        console.log(res.message)
         this.messageStatus = true;
-        alert(res.message)
       }else {
         this.allCourses = res.allCourses
         // this._resourceService.getCourseResources()
       }
+      // console.log(res)
     },
     err=>(console.log(err))
     )

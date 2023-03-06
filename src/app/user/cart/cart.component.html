@@ -2,7 +2,7 @@
   <mat-progress-bar mode="query" style="margin-top: -35px;" *ngIf="loading"></mat-progress-bar>
   <h2 style="font-size: 25px;">My cart</h2>
 
-  <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5" *ngIf="cart.length!=0">
+  <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5" *ngIf="cart.length!=0 && !loading">
     <div class="table-responsive">
       <table class="table" >
         <thead>
@@ -58,8 +58,10 @@
       </div>
     </div>
 
-  <div class="container" align="center" *ngIf="cartLengthIsEmpty">
-    <app-empty-cart></app-empty-cart>
+  <div *ngIf="!loading">
+    <div class="container" align="center" *ngIf="cart.length==0">
+      <app-empty-cart></app-empty-cart>
+    </div>
   </div>
 </div>
 

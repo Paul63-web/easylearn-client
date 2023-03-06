@@ -39,7 +39,7 @@
           </div>
 
           <div class="d-flex">
-            <button mat-raised-button matStepperNext [disabled]="firstFormGroup.invalid" style="background-color: rgb(254, 101, 12); color: #fff;" (click)="nextStep()">Next</button>
+            <button mat-raised-button matStepperNext [disabled]="firstFormGroup.invalid || courseAlreadyExist" style="background-color: rgb(254, 101, 12); color: #fff;" (click)="nextStep()">Next</button>
           </div>
         </form>
       </mat-step>

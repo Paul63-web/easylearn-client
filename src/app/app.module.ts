@@ -52,7 +52,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PayementComponent } from './payement/payement.component';
 import { Angular4PaystackModule } from 'angular4-paystack';
 import { AllTransactionsComponent } from './all-transactions/all-transactions.component';
-import { EmptyCartComponent } from './user/cart/empty-cart/empty-cart.component';
+import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 
 @NgModule({

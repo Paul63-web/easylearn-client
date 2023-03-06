@@ -4,23 +4,17 @@ li a{
 }
 
 .activeRoute {
-    color: rgb(255,90,44) !important;
+    color: rgb(254,101,12) !important;
 }
 
 .login{
     background-color: white;
-    color: rgb(255,90,44);
-    transition: all 0.5s 0s ease-in-out;
-}
-
-.login:hover{
-    color: white;
-    background-color: rgb(255,90,44);
+    color: rgb(254,101,12);
 }
 
 
 .signup{
-    background-color: rgb(255,90,44);
+    background-color: rgb(254,101,12);
     color: white;
     transition: all 0.5s 0s ease-in-out;margin-left: 10px !important;
 }

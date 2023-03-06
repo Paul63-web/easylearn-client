@@ -5,16 +5,16 @@
       [opened]="(isHandset$ | async) === false">
     <mat-nav-list class="pt-5">
       <div align="center" class="mb-5">
-        <img src="../../assets/2048px-Angular_full_color_logo.svg.png" class="company-logo" alt="company-logo">
-        <h4 class="company-name-side-nav">Easy Learn</h4>
-        <span style="font-size: 20px; font-weight: 500;" *ngIf="user">Welcome, {{user.username}}</span>
+        <!-- <img src="../../assets/user-png-33842.png" class="company-logo rounded-full" alt="user profile picture"> -->
+        <img src="../../assets/IMG-20220815-WA0001.jpg" class="rounded-circle" style="width: 70px; height: 70px; object-fit: cover;" alt="">
+        <p style="font-size: 20px; font-weight: 500; color: #fff" *ngIf="user">Welcome, {{user.username}}</p>
       </div>
 
       <!-- GENERAL -->
       <div class="general">
         <h4 class="general-text">General</h4>
 
-        <a mat-list-item class="text-white" routerLink="/user/dashboard">
+        <a mat-list-item class="text-white side-button nav-item active" routerLink="/user/dashboard">
           <mat-icon>dashboard</mat-icon>
           <span class="nav-list-text">Dashboard</span>
         </a>
@@ -24,12 +24,12 @@
       <div class="profile mt-2">
         <h4 class="general-text">Profile</h4>
 
-        <a mat-list-item class="text-white" routerLink="/user/profile">
+        <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/user/profile">
           <mat-icon>account_box</mat-icon>
           <span class="nav-list-text">My profile</span>
         </a>
 
-        <a mat-list-item class="text-white" routerLink="/user/changepassword">
+        <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/user/changepassword">
           <mat-icon>lock</mat-icon>
           <span class="nav-list-text">Change password</span>
         </a>
@@ -39,12 +39,12 @@
       <div class="profile mt-2">
         <h4 class="general-text">Academics</h4>
 
-        <a mat-list-item class="text-white"routerLink="/user/enroll">
+        <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/user/enroll">
           <mat-icon>school</mat-icon>
           <span class="nav-list-text">Enroll for a course</span>
         </a>
 
-        <a mat-list-item class="text-white" routerLink="/user/my-courses">
+        <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/user/my-courses">
           <mat-icon>note_add</mat-icon>
           <span class="nav-list-text">My Courses</span>
         </a>
@@ -52,7 +52,7 @@
           shopping_cart
           </span> -->
 
-        <a mat-list-item class="text-white" routerLink="/user/cart">
+        <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/user/cart">
           <mat-icon>shopping_cart</mat-icon>
           <span class="nav-list-text">My cart</span>
         </a>
@@ -68,17 +68,17 @@
         <h4 class="general-text">Payments</h4>
 
 
-        <a mat-list-item class="text-white" routerLink="/user/payment">
+        <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/user/payment">
           <mat-icon>payment</mat-icon>
           <span class="nav-list-text">payment</span>
         </a>
 
-        <a mat-list-item class="text-white" routerLink="/user/withdraw">
+        <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/user/withdraw">
           <mat-icon>payment</mat-icon>
           <span class="nav-list-text">Withdraw</span>
         </a>
 
-        <a mat-list-item class="text-white" routerLink="/user/transaction-history">
+        <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/user/transaction-history">
           <mat-icon>history</mat-icon>
           <span class="nav-list-text">Transaction History</span>
         </a>
@@ -93,12 +93,12 @@
           <span class="nav-list-text">Help</span>
         </a>
 
-        <!-- <a mat-list-item class="text-white" routerLink="/home">
+        <!-- <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/home">
           <mat-icon>home</mat-icon>
           <span class="nav-list-text">Home</span>
         </a> -->
 
-        <a mat-list-item class="text-white" routerLink="/login">
+        <a mat-list-item class="text-white side-button" routerLinkActive="activeButton" routerLink="/login">
           <mat-icon>account_box</mat-icon>
           <span class="nav-list-text">Logout</span>
         </a>

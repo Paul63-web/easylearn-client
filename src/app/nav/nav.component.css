@@ -43,7 +43,7 @@
 .general-text {
   /* font-size: 18px; */
   font-weight: 450;
-  color: gray;
+  color: rgb(251, 164, 117);
   padding-left: 20px !important;
 }
 
@@ -67,5 +67,8 @@
 
 .search-inp:focus {
   border: 1px solid #e2e2e2;
-  
 }
+
+/* .activeButton {
+  background-color: rgba(254, 101, 12, 0.2);
+} */

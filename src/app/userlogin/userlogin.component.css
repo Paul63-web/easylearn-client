@@ -25,7 +25,7 @@
 }
 
 .register-btn {
-    background-color: rgb(255,90,44);
+    background-color: rgb(254,101,12);
 }
 
 .inp-label {
@@ -33,6 +33,6 @@
 }
 
 .register-btn:disabled, .register-btn[disabled] {
-    background-color: rgb(252, 146, 107);
+    background-color: rgb(253, 208, 192);
     cursor: no-drop;
 }
