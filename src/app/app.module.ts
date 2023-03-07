@@ -116,7 +116,7 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
     MatProgressSpinnerModule,
     MatSnackBarModule,
     Angular4PaystackModule,
-    Angular4PaystackModule.forRoot('pk_test_a03241e1d6fd5f88d09fe5236ecda5e85c226c20'),
+    Angular4PaystackModule.forRoot('pk_test_4359d1050bbf6556880c95f583094b29e9991d7d'),
 
     // Angular4PaystackModule.forRoot('sk_test_1bd1e4d513c379cbe1a2b481b68f18e183e06867')
 

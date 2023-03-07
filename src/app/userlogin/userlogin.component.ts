@@ -69,7 +69,10 @@ export class UserloginComponent implements OnInit {
           this.loading = false;
         }
       },
-      err=>console.log(err)
+      err=>{
+        this.loading = false;
+        console.log(err)
+      }
       );
     }
   }
