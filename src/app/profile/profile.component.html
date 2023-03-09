@@ -3,8 +3,7 @@
 
   <mat-stepper linear #stepper class="container">
       <mat-step [stepControl]="" >
-        <mat-progress-bar mode="indeterminate" *ngIf="loading" class="d-none d-md-block" style="width: 649px; margin-left: -12px; height: 3px;"></mat-progress-bar>
-        <mat-progress-bar mode="indeterminate" *ngIf="loading" class="d-block d-md-none" style="width: 412px; margin-left: -12px; height: 3px;"></mat-progress-bar>
+        <app-loader *ngIf="loading"></app-loader>
           <ng-template matStepLabel style="background-color: orange !important;">Profile Details</ng-template>
           <div class="col-md-6">
             <label for="FirstName" class="form-label">First Name</label>

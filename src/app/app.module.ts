@@ -54,6 +54,7 @@ import { Angular4PaystackModule } from 'angular4-paystack';
 import { AllTransactionsComponent } from './all-transactions/all-transactions.component';
 import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { WithdrawComponent } from './withdraw/withdraw.component';
     PayementComponent,
     AllTransactionsComponent,
     EmptyCartComponent,
-    WithdrawComponent
+    WithdrawComponent,
+    LoaderComponent
 
 
   ],

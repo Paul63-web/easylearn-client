@@ -6,8 +6,7 @@
 
         </div>
         <div class="col-12 col-md-6">
-          <mat-progress-bar mode="indeterminate" class="w-100" *ngIf="loading" style="height: 3px;"></mat-progress-bar>
-          <!-- <mat-progress-bar mode="indeterminate" *ngIf="loading" class="d-block d-md-none" style="width: 412px; margin-left: -12px; height: 3px;"></mat-progress-bar> -->
+          <app-loader *ngIf="loading"></app-loader>
           <div class="container p-4">
             <h1 class="register-h1">Login</h1>
             <div class="w-25" style="border: 1px solid rgb(255,90,44); margin-top: -2px; color: rgb(255,90,44);"></div>

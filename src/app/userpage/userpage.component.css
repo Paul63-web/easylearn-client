@@ -17,544 +17,130 @@
 
 
 
-header{
+/* header{
     background-image: url(/assets/images/banner/banner_3.png);
     width: 100%;
     background-repeat: no-repeat;
     height: 1000px;
-}
+} */
 
-h1{
-    font-size: 65px;
-    color: white;
-    position: absolute;
-    margin: 15% 0 0 20% ;
-    font-weight: 600;
-}
-
-p{  
-    color: white;
-    position: absolute;
-    margin: 26% 0 0 20%;
-    font-size: 15px;
-}
-
-#start{
-    width: 13%;
-    background-color: rgb(255,90,44);
-    color: white;
-    position: absolute;
-    margin: 30% 0 0 20%;
-    padding: 15px;
-    border-radius: 30px;
-    outline: none;
-    border: none;
-}
-
-#start:hover{
-    background-color: rgb(14, 26, 87);
-    transition: all 0.7s;
-    transition-property: all;
-    transition-timing-function: ease-in-out;
-} 
-
-
-#btn{
-    width: 17%;
-    background-color: rgb(14, 26, 87);
-    color: white;
-    position: absolute;
-    margin: 32% 0 0 20%;
-    padding: 18px;
-    border-radius: 30px;
-    outline: none;
-    border: none;
-}
-
-#btn:hover{
-    background-color: rgb(255,90,44);
-    transition: all 0.5s 0s;
-} 
-
-/* end of header */
-
-/* beginin of features */
-#tones{
-    color: rgb(14, 26, 87);
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    margin-top: 30px;
-}
-
-.smaller {
-    opacity: 1;
-    transition: opacity .25s ease-in-out;
-    -moz-transition: opacity .25s ease-in-out;
-    -webkit-transition: opacity .25s ease-in-out;
-    }
- 
-    .smaller:hover {
-       opacity: 0.7;
-       }
-
-
-
-#head1{
-    margin-top: 30%;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-#head2{
-    font-weight: bold;
-    margin-top: 45%;
-}
-/* end of feature  */
-
-/* beginin of doing the right thing */
-#thinking{
-    background-color: rgb(247,248,252);
-}
-
-.bigger{
-    margin-top: -100px;
-    height: 700px;
-    width: 100%;
-}
-
-.heading{
-    margin: 90px 0 0 90px;
-    font-weight: bold;
-    font-size: 50px;
-}
-
-#number{
-    margin-left: 46px;
-   color: rgb(33,37,41);
-    font-size: 21px;
-}
-
-#number2{
-    margin-left: 46px;
-    font-weight: bold;
-    font-size: 20px;
-    color: rgb(255,90,44);
-}
-
-#content{
-    margin-left: 90px;
-    font-size: 13px;
-    color: rgb(149, 148, 147);
-}
-/* end of doing the right thing */
-
-
-/* <!-- beginin of popular courses one */
-
-#online{
-    margin-top: -360px;
-}
-
-.card{
-    outline: none;
-    border: none;
-}
-
-#popular-content{
-    font-size: 12px;
-    color: rgb(149, 148, 147);
-    text-align: center;
-}
-
-
-.title{
-    margin-left: 20px;
-    
-}
-
-.title h4{
-    font-size: 19px;
-    font-weight: bold;
-}
-
-.title h6{
-    font-size: 12px;
-    color: rgb(149, 148, 147);
-}
-
-.title a{
-    color:  rgb(9,42,206);
-    text-decoration: none;
-}
-
-.title a:hover{
-    color: rgb(255,90,44) ;
-}
-
-#icon{
-    position: relative;
-}
-
-#calendicon{
-    height: 13px;
-    width: 13px;
-}
-
-.free{
-    background-color: rgb(9,42,206);
-    width: 30%;
-    padding: 5px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    position: absolute;
-    float: right;
-    margin: 51% 0 0 70%;
-    
-}
-
-#cart{
-    background-color: rgb(255,90,44);
-    color: white;
-    outline: none;
-    border: none;
-    float: right;
-}
-
-#cart:hover{
-    background-color: rgb(9,42,206);
-    transition: all 0.5s 0s;
-} 
-
-/* end popular courses */
-
-
-/* beginin of watch online video */
-.sub_title{
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    margin-top: -79%;
-    margin-bottom: 40px;
-
-}
-
-#counts{
-    margin-top: -100px;
-    text-align: center;
-}
-
-#counter{
-    font-size: 40px;
-    font-weight: bold;
-}
-
-#satis{
-    color: rgb(255,90,44) ;
-}
-
-#watch0{
-    width: 107%;
-    margin-top: -110%;
-    height: 840px; 
-}
-
-#watch3{
-    margin-top: 70%;
-    width: 107%;
-} 
-/* end of watch online video */
-
-/* Reponsive */
-@media only screen and (max-width: 500px){
-   
-/*beginin of header */
-
-header{
+.header-section {
     background-image: url(/assets/images/banner/banner_3.png);
     width: 100%;
     background-repeat: no-repeat;
-    height: 500px;
+    height: 100vh;
+    position: relative;
 }
 
-h1{
-    font-size: 4opx;
+.header-section h1{
+    font-size: 55px;
+    color: white;
+    margin-top: 150px;
+    position: absolute;
+    font-weight: 600;
+    max-width: 900px; 
+    line-height: 50px;
+    padding: 100px;
+}
+
+.header-section p{  
     color: white;
     position: absolute;
-    margin: 20% 0 0 10% ;
+    max-width: 750px;
+    margin-top: 270px;
+    font-size: 15px;
+    padding: 100px;
 }
 
-p{  
-    color: white;
+.get-started {
     position: absolute;
-    margin: 67% 0 0 10% ;
+    margin-top: 450px;
+    margin-left: 100px;
+    background-color: rgb(254, 101, 12); 
+    color: #fff; 
+    border-radius: 30px; 
+    width: 150px;
 }
 
-#start{
-    width: 75%;
-    background-color: rgb(255,90,44);
-    color: white;
-    position: absolute;
-    margin: 92% 0 0 10%;
-    padding: 18px;
-    border-radius: 30px;
-    outline: none;
-    border: none;
-}
+@-webkit-keyframes bounceRight {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    40% {
+      -webkit-transform: translateX(-15px);
+      transform: translateX(-15px);
+    }
+    60% {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+  }
+  @-moz-keyframes bounceRight {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(-15px);
+    }
+    60% {
+      transform: translateX(-10px);
+    }
+  }
+  @keyframes bounceRight {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+    }
+    40% {
+      -ms-transform: translateX(-15px);
+      transform: translateX(-15px);
+    }
+    60% {
+      -ms-transform: translateX(-10px);
+      transform: translateX(-10px);
+    }
+  }
 
-#start:hover{
-    background-color: rgb(9,42,206);
-    transition: all 0.5s 0s;
-} 
-/* end of header */
-
-.bigger{
-    margin-top: -100px;
-    height: 400px;
-    width: 90%;
-}
-
-
-/* beginin of watch online video */
-
-.sub_title{
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    margin-top: -185%;
-    margin-bottom: 40px;
-
-}
-
-#counts{
-    margin-top: -200px;
-    text-align: center;
-}
-
-#counter{
-    font-size: 40px;
-    font-weight: bold;
-}
-
-#satis{
-    color: rgb(255,90,44);
-}
-
-
-
-#watch0{
-    width: 100%;
-    margin-top: -360%;
-    height: 500px; 
-}
-
-#watch1{
-    width: 90%;
-}
-
-#watch3{
-    margin-top: 90%;
-    width: 100%;
-    height: 500px; 
-} 
-
-/* end of watch online video */
-
-/* beginin of popular courses */
-
-.free{
-    background-color: rgb(9,42,206);
-    width: 30%;
-    padding: 5px;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    position: absolute;
+.arrow-right {
+    -webkit-animation: bounceRight 2s infinite;
+    animation: bounceRight 2s infinite;
     float: right;
-    margin: 52.5% 0 0 70%;
-    
-}
+    padding-top: 5px;
+    margin-left: 15px;
+  }
 
-/* end of popular courses */
-}
-
+/* Reponsiveness */
 @media only screen and (max-width: 900px){
-
-
-    #tones{
-        color: black;
-        text-align: center;
-        font-size: 30px;
-        font-weight: bold;
-    }
-    #head1{
-        margin-top: 30%;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    #head2{
-        font-weight: bold;
-        margin-top: 61%;
-        font-size: 13px;
-    }
-   
-    /*beginin of header */
     
-    h1{
+    .header-section h1{
         font-size: 45px;
         color: white;
-        position: absolute;
-        margin: 15% 0 0 10% ;
-        text-align: center;
+        max-width: 100%;
+        margin-top: 150px;
+        padding: 20px;
     }
     
-    p{  
+    .header-section p{  
         color: white;
-        position: absolute;
-        margin: 67% 0 0 10% ;
+        padding: 20px;
+        margin-top: 300px;
     }
     
-    #start{
-        width: 75%;
-        background-color: rgb(255,90,44);
-        color: white;
-        position: absolute;
-        margin: 92% 0 0 10%;
-        padding: 18px;
-        border-radius: 30px;
-        outline: none;
-        border: none;
+    .header-section .get-started {
+        margin-top: 420px;
+        margin-left: 20px;
     }
-    
-    #start:hover{
-        background-color: rgb(9,42,206);
-        transition: all 0.5s 0s;
-    } 
-    /* end of header */
-    
-    .bigger{
-        margin-top: -100px;
-        height: 400px;
-        width: 90%;
-    }
-    
-    
-    /* beginin of watch online video */
-    
-    .sub_title{
-        text-align: center;
-        font-size: 40px;
-        font-weight: bold;
-        color: white;
-        margin-top: -85%;
-        margin-bottom: 40px;
-    
-    }
-    
-    #counts{
-        margin-top: -200px;
-        text-align: center;
-    }
-    
-    #counter{
-        font-size: 40px;
-        font-weight: bold;
-    }
-    
-    #satis{
-        color: rgb(255,90,44);
-    }
-    
-    
-    
-    #watch0{
-        width: 100%;
-        margin-top: -120%;
-        height: 500px; 
-    }
-    
-    #watch1{
-        width: 90%;
-    }
-    
-    #watch3{
-        margin-top: 90%;
-        width: 100%;
-        height: 500px; 
-    } 
-    
-    /* end of watch online video */
-
-    #teamview{
-        width: 20%;
-        background-color: rgb(255,90,44);
-        color: white;
-        outline: none;
-        border: none;
-        float: right;
-        border-radius: 10px;
-        margin-top: 15%;
-    }
-    
-    #teamview:hover{
-        background-color: rgb(9,42,206);
-        transition: all 0.5s 0s;
-    }
-
-    #team1{
-        height: 80px;
-        width: 53%;
-        border-radius: 10px;
-    
-    }
-    
-    #team2{
-        height: 81px;
-        width: 52%;
-        border-radius: 10px;
-        margin-bottom: 30px;
-    
-    }
-    
-    #team{
-        height: 50%;
-        width: 50%;
-        border-radius: 10px;
-    }
-    
-    #teamname{
-        color: rgb(255,90,44);
-        font-size: 14px;
-        font-weight: bold;
-    }
-    
-    #teamprofession{
-        font-size: 12px;
-        color: rgb(149, 148, 147);
-    }
-    
-    /* beginin of popular courses */
-    
-    .free{
-        background-color: rgb(9,42,206);
-        width: 30%;
-        padding: 5px;
-        text-align: center;
-        font-weight: bold;
-        color: white;
-        position: absolute;
-        float: right;
-        margin: 52.5% 0 0 70%;
-        
-    }
-    
-    /* end of popular courses */
-    
-
-    
-    
-    }
+}

@@ -1,6 +1,12 @@
 li a{
     font-size: 15px;
     margin-right: 35px;
+    color: rgb(3, 13, 64);
+    transition: ease .3s;
+}
+
+li a:hover {
+    color: rgb(250, 118, 47);
 }
 
 .activeRoute {
@@ -12,6 +18,10 @@ li a{
     color: rgb(254,101,12);
 }
 
+.login:hover {
+    background-color: #eee;
+}
+
 
 .signup{
     background-color: rgb(254,101,12);
@@ -19,7 +29,33 @@ li a{
     transition: all 0.5s 0s ease-in-out;margin-left: 10px !important;
 }
 
-.activeButton {
-    color: rgb(255,90,44);
+.signup:hover {
+    background-color: rgb(215, 79, 0);
 }
 
+.activeButton {
+    color: rgb(254 , 101 , 12);
+}
+
+.navbar {
+    background-color: transparent;
+    transition: background-color 1s ease 0s;
+}
+
+.navbar.solid-nav {
+    background-color: #fff;
+    transition: background-color .5s all 0s;
+    box-shadow: 0 0 4px grey;
+}
+
+@media only screen and (max-width: 500px){
+    .navbar {
+        background-color: #fff;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .navbar {
+        background-color: #fff;
+    }
+}

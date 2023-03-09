@@ -1,6 +1,6 @@
 <div class="grid-container">
   <h1 class="mat-h1">Add course</h1>
-  <mat-progress-bar mode="indeterminate" *ngIf="loading" class="d-none d-md-block w-100" style=" margin-left: -12px; height: 3px;"></mat-progress-bar>
+  <app-loader *ngIf="loading" class="d-none d-md-block w-100" style=" margin-left: -12px; height: 3px;"></app-loader>
   <div *ngIf="courseAlreadyExist" class="alert alert-danger alert-dismissible fade show" role="alert">
     {{courseErrorMessage}}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

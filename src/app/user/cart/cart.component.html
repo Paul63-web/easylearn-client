@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 100px;" *ngIf="true">
-  <mat-progress-bar mode="query" style="margin-top: -35px;" *ngIf="loading"></mat-progress-bar>
+  <app-loader style="margin-top: -35px;" *ngIf="loading"></app-loader>
   <h2 style="font-size: 25px;">My cart</h2>
 
   <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5" *ngIf="cart.length!=0 && !loading">

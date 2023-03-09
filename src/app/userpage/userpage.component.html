@@ -1,13 +1,16 @@
-<!-- <div class="container-fluid grid-cont"></div> -->
 <app-navbar></app-navbar>
+<section class="header-section">
+    <h1 data-aos="fade-down" data-aos-duration="3000">Take the world's best courses online</h1>
+    <p data-aos="fade-up" data-aos-duration="3000">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus enim, praesentium saepe odit ducimus voluptatum similique minima. Eaque, praesentium exercitationem excepturi</p>
 
-<header>
-    <h1 data-aos="fade-down" data-aos-delay="400" data-aos-duration="2000">Take The World's Best <br> <br> Course Online.</h1>
-    <p data-aos="fade-in" data-aos-delay="500" data-aos-duration="1500">Ante amet vitae vulputate odio nulla vel pretium pulvinar aenean.
-    <br> Poncus eget adipiscing etiam arcu Ultricies.</p>
-
-    <button routerLink="/signup" id="start" data-aos="fade-in" data-aos-delay="400" data-aos-duration="3000">START MY FREE MONTH</button>
-</header>
+    <button class="d-flex get-started" mat-button data-aos="fade-in" data-aos-duration="3000">
+        <span class="me-auto float-left">Get started</span>
+        <span class="ms-auto ml-5" >
+            <mat-icon class="arrow-right">arrow_right_alt</mat-icon>
+            <!-- <span class="arrow-right" style="margin-left: 20px; font-size: 15px; font-weight: 600;">&rarr;</span> -->
+        </span>
+    </button>
+</section>
 
 <!-- CATEGORIES SECTION -->
 <app-categories data-aos="fade-down" data-aos-duration="3000"></app-categories>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light shadow fixed-top bg-light bg-faded">
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">LOGO</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
           </li>
           <li class="nav-item" style=" margin-left: -30px; font-size: 10px;">
             <a class="nav-link" routerLink="/cart" [routerLinkActive]="['activeRoute']">
-              <mat-icon matBadge="15" matBadgeColor="warn">shop</mat-icon>
+              <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
               <span class="cdk-visually-hidden">
                 Example with a home icon with overlaid badge showing the number 15
               </span>
@@ -34,8 +34,8 @@
         </ul>
       <!-- <img id="search" src="/assets/images/logos/Search_52px.png" alt="">
       <img id="cart"  src="/assets/images/logos/Shopping Bag_64px.png" alt=""> -->
-      <button routerLink="/login" class="login shadow-sm" mat-button>Login</button>
-      <button routerLink="/signup" class="signup shadow-sm" mat-button>Signup</button>
+      <button routerLink="/login" class="login shadow-sm" mat-raised-button>Login</button>
+      <button routerLink="/signup" class="signup shadow-sm" mat-raised-button>Signup</button>
     </div>
   </div>
 </nav>
