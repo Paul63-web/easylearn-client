@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit{
 
-  public onlineUser: string = "";
-
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -73,9 +71,8 @@ export class DashboardComponent implements OnInit{
     this._authService.getSignedInUser({}).subscribe((res: any)=> {
       if(res.status == true) {
         this.user = res.user;
-        this.onlineUser = res.user._id;
-        localStorage.setItem("onlineUser", this.onlineUser)
-        console.log(this.user)
+        // this.onlineUser = ;
+        localStorage.setItem("onlineUser", JSON.stringify(res.user._id));
       }else {
         this._router.navigate(['/login']);
       }

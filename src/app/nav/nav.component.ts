@@ -17,6 +17,8 @@ export class NavComponent implements OnInit{
   public fileSrc: string;
   public profilePixForm: FormGroup;
   public noProfile: string = "../../assets/index.png";
+  public loading: boolean = false;
+  public welcomeUser: string;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -31,7 +33,8 @@ export class NavComponent implements OnInit{
     private _editProfile: EditProfileService
     ) {
       this.profilePixForm = this._fb.group({
-        pictureFile: ['', Validators.required]
+        pictureFile: ['', Validators.required],
+        text: ['Hello, how are you', Validators.required]
       })
     }
 
@@ -43,6 +46,7 @@ export class NavComponent implements OnInit{
     this._authService.getSignedInUser({}).subscribe((res: any)=> {
       if(res.status == true) {
         this.user = res.user;
+        this.welcomeUser = "Welcome " + this.user['username']
       }else {
         alert(res.message);
       }
@@ -50,27 +54,34 @@ export class NavComponent implements OnInit{
   }
 
   onFileSelected(event: any) {
-    console.log("A file was selected")
+    this.loading = true;
     let profilePix = event.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(profilePix);
     reader.onload = () => {
       this.fileSrc = reader.result as string;
       this.profilePixForm.patchValue({pictureFile: reader.result});
-      console.log(this.profilePixForm.get('pictureFile').value)
     }
+    console.log(this.profilePixForm.controls.text.value)
+
     
-    if(!this.profilePixForm.invalid) {
-      let pictureObj = {
-        onlineUserEmail: this.user['email'],
-        picture: this.profilePixForm.get('pictureFile').value
-      }
-      this._editProfile.uploadProfilePix(pictureObj).subscribe((res: any)=> {
-        if(res.success  == true) {
-          console.log(res.message);
-          this.getSignedInUser()
-        }
-      })
-    }
+    // if(!this.profilePixForm.invalid) {
+    //   let pictureObj = {
+    //     onlineUserEmail: this.user['email'],
+    //     picture: this.profilePixForm.get('pictureFile').value
+    //   }
+    //   console.log(pictureObj);
+    //   this._editProfile.uploadProfilePix(pictureObj).subscribe((res: any)=> {
+    //     console.log('Hello')
+    //     if(res.success  == true) {
+    //       this.loading = false;
+    //       this.getSignedInUser()
+    //     }
+    //   },
+      
+    //   err=> console.log(err));
+    // }else {
+    //   alert("Form is invalid")
+    // }
   }
 }

@@ -8,17 +8,23 @@
         <form [formGroup]="profilePixForm">
           <input type="file" name="profilePix" id="" style="display: none;" (change)="onFileSelected($event)" #profileUpload>
         </form>
-        <img src="{{user['profilePix'] ? user['profilePix'] : noProfile}}" [matMenuTriggerFor]="menu" aria-label="Toggle profile menu" class="rounded-circle" style="width: 70px; height: 70px; object-fit: cover; cursor: pointer;" alt="">
-        <mat-menu #menu="matMenu" xPosition="before">
-          <button mat-menu-item (click)="profileUpload.click()">
-            <mat-icon>upload</mat-icon>
-            Upload picture
-          </button>
-          <button mat-menu-item>
-            <mat-icon>account_circle</mat-icon>
-            View profile</button>
-        </mat-menu>
-        <p style="font-size: 20px; font-weight: 500; color: #fff" *ngIf="user" class="pt-2">Welcome, {{user.username}}</p>
+        <div class="profile">
+          <img src="{{user['profilePix'] ? user['profilePix'] : noProfile}}" [matMenuTriggerFor]="menu" aria-label="Toggle profile menu" class="rounded-circle" style="width: 70px; height: 70px; object-fit: cover; cursor: pointer;" alt="">
+          <div *ngIf="loading" class="absolute-house m-auto rounded-circle">
+            <div class="spinner-border text-light position-absolute m-auto" role="status">
+            </div>
+          </div>
+          <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="profileUpload.click()">
+              <mat-icon>upload</mat-icon>
+              Upload picture
+            </button>
+            <button mat-menu-item>
+              <mat-icon>account_circle</mat-icon>
+              View profile</button>
+          </mat-menu>
+        </div>
+        <p style="font-size: 20px; font-weight: 500; color: #fff" *ngIf="user" class="pt-2">{{welcomeUser}}</p>
       </div>
 
       <!-- GENERAL -->

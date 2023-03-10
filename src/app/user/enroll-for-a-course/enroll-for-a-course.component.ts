@@ -10,11 +10,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./enroll-for-a-course.component.css']
 })
 export class EnrollForACourseComponent implements OnInit {
-  public errorMessageStatus = false
-  public errorMessage = ''
-
+  public errorMessageStatus = false;
+  public errorMessage = '';
+  public onlineUser: string = "";
   public messageStatus = false;
-  public message = ''
+  public message = '';
 
   public loading: boolean = false;
 
@@ -30,21 +30,26 @@ export class EnrollForACourseComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
+    this.onlineUser = localStorage.onlineUser;
+    console.log(this.onlineUser)
     this._getCourses.getAllCourses({}).subscribe((res:any)=>{
       if(res.status == false) {
         this.errorMessageStatus = true;
         this.errorMessage = res.message
-
         this.messageStatus = true;
         this.message = res.message;
-      }else {
-        this.allCourses = res.courses;
+      }else if(res.status == true) {
+        let userCou = res.courses.filter((item: any)=> item.authorId !== JSON.parse(this.onlineUser));
+        this.allCourses = userCou;
         this.resources = res.resources;
         this.prices = res.prices;
         this.loading = false;
       }
     },
-    err=>(console.log(err))
+    err=>{
+      this.loading = false;
+      alert("error ti wa o");
+    }
     )
   }
 
@@ -62,7 +67,6 @@ export class EnrollForACourseComponent implements OnInit {
         this.allCourses = res.allCourses
         // this._resourceService.getCourseResources()
       }
-      // console.log(res)
     },
     err=>(console.log(err))
     )
