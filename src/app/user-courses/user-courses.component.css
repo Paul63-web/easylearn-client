@@ -43,3 +43,9 @@
   /* margin: 51% 0 0 0; */
 
 }
+
+.shadowHeader .shadow {
+    background-color: #fff;
+    transition: background-color .5s all 0s;
+    box-shadow: 0 0 4px grey;
+}

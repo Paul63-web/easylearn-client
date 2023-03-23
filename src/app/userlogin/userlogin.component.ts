@@ -38,6 +38,10 @@ export class UserloginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    // setTimeout(() => {
+    //   // this.userNotExist = false;
+    //   console.log("Hello world");
+    // }, 2000);
   }
 
   login() {
@@ -51,8 +55,6 @@ export class UserloginComponent implements OnInit {
       password
     }
 
-    console.log(loginObj);
-
     if(!this.loginForm.invalid) {
       this._Auth.login(loginObj).subscribe(res=> {
         if(res.isSuccess == true) {
@@ -60,21 +62,30 @@ export class UserloginComponent implements OnInit {
           localStorage.setItem("Auth", this.Auth);
           this.router.navigate(['/user/dashboard']);
         } else if(res.isWrongPassword == true) {
+          this.loading = false;
           this.passwordErr = true;
           this.passwordErrMsg = res.message;
-          this.loading = false;
+          setTimeout(()=> {
+            this.passwordErr = false;
+          }, 2000);
         } else if(res.isSuccess == false && res.userNotExist == true) {
+          this.loading = false;
           this.userNotExist = true;
           this.userNotExistErrMsg = res.message;
-          this.loading = false;
+          setTimeout(()=> {
+            this.userNotExist = false;
+          }, 2000);
         }
       },
       err=>{
         this.loading = false;
-        console.log(err)
+        this.passwordErrMsg = "Awww snap! An error occured, please try again later";
+        this.passwordErr = true;
+        setTimeout(()=> {
+          this.passwordErr = false;
+        })
       }
       );
     }
   }
-
 }

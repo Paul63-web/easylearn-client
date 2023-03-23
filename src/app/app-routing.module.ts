@@ -22,15 +22,16 @@ import { ProfileComponent } from './profile/profile.component';
 import { PayementComponent } from './payement/payement.component';
 import { AllTransactionsComponent } from './all-transactions/all-transactions.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: UserpageComponent},
   {path: 'signup', component: UsersignupComponent },
   {path: 'contact', component: ContactComponent},
-  {path: "user", component: NavComponent, children: [
-    {path:"dashboard", component: DashboardComponent},
-    {path: "my-courses", component: UserCoursesComponent},
+  {path: "user", canActivate: [AuthGuard], component: NavComponent, children: [
+    {path:"dashboard", canActivateChild: [AuthGuard], component: DashboardComponent},
+    {path: "my-courses", canActivateChild: [AuthGuard], component: UserCoursesComponent},
     {path:"add-course", component: AddCourseComponent},
     {path: "enroll", component: EnrollForACourseComponent},
     {path: "profile", component: ProfileComponent},

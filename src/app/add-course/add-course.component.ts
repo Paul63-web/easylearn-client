@@ -15,7 +15,7 @@ import { PaymentService } from '../services/payment.service';
 export class AddCourseComponent implements OnInit {
   public show: boolean = false;
   public courseCategories: Array<string> = ['Design', 'Development', 'Marketing', 'It and Software', 'Personal Development', 'Business', 'Photography', 'Music'];
-  public resourcesType: Array<string> = ['PDF', 'Documentation', 'Video'];
+  public resourcesType: Array<string> = ['PDF', 'Link', 'Video'];
   public courseAlreadyExist = false;
   public courseErrorMessage: string = '';
   public resourcesAlreadyExists: boolean = false;
@@ -40,9 +40,9 @@ export class AddCourseComponent implements OnInit {
   // FORM GROUP FOR STAGE TWO
   stageTwoFormGroup = this._formBuilder.group({
     resourceName: ['', Validators.required],
-    resourceFIle: ['', Validators.required],
+    resourceFIle: [''],
     resourceType: ['', Validators.required],
-    resourceDuration: ['', Validators.required],
+    resourceDuration: [''],
     resourceLink: ['']
   });
 
@@ -108,19 +108,23 @@ export class AddCourseComponent implements OnInit {
           this.loading = false;
           this.errorOccurred = true;
           this.errorOccurredMessage = res.message;
+          // setTimeout(() => {
+          //   this.errorOccurred = false;
+          // }, 2000);
         }else if (res.isExist == true ) {
           this.disabled = false;
           this.loading = false;
           this.courseAlreadyExist = true;
           this.courseErrorMessage = res.message;
+          // setTimeout(() => {
+          //   this.courseAlreadyExist = false;
+          // }, 200);
         }
       },
       err=>(console.log(err))
       )
     }
   }
-
-  // RTODO get id to delete img path from cloudinary(backend)
 
   // stagetwo of the stepper
   onFileChange(event: any){
@@ -144,27 +148,48 @@ export class AddCourseComponent implements OnInit {
       let resourceType = this.stageTwoFormGroup.get('resourcesType').value;
       let resourceDuration = this.stageTwoFormGroup.get('resourceDuration').value;
       let resourceLink = this.stageTwoFormGroup.get('resourceLink').value;
-      let resourcesObject = {resourceName, resourceFIle, resourceType, resourceDuration, resourceLink};
-      this._addresources.addResources(resourcesObject).subscribe((res: any)=> {
-        if (res.status == true) {
-          console.log("Successfully");
-          this.loading = false;
-        }else if(res.errorOccurred == true){
-          this.loading = false;
-          console.log(res)
-          this.errorOccurred = true;
-          this.errorOccurredMessage = res.massage;
-        }else if (res.isExist == true ) {
-          console.log(res)
-          this.loading = false;
-
-          this.resourcesAlreadyExists = true;
-          this.resourcesErrorMessage = res.message;
-          this.courseId = res.lastCourseId
+      let resourcesObject;
+      // {resourceName, resourceFIle, resourceType, resourceDuration, resourceLink};
+      if(this.secondFormGroup.value.resourceype == 'PDF') {
+        if (this.secondFormGroup.value.resourceFIle !== "") {
+          resourcesObject = {resourceName, resourceFIle, resourceType}          
+        }else {
+          console.log("Resource File is empty")
         }
-      },
-      err=>(console.log(err))
-      )
+      } else if(this.secondFormGroup.value.resourceType == 'Link') {
+        if (this.secondFormGroup.value.resourceLink !== "") {
+          resourcesObject = {resourceName, resourceFIle, resourceType, resourceLink}          
+        }else {
+          console.log("Resource link cannot be empty")
+        }
+      } else if(this.secondFormGroup.value.resourceType == 'Video') {
+        if (this.secondFormGroup.value.resourceFIle !== "" || this.secondFormGroup.value.resourceDuration !== "") {
+          resourcesObject = {resourceName, resourceFIle, resourceType, resourceDuration}          
+        }else {
+          console.log("Please fill in the required details")
+        }
+      }
+      console.log(resourcesObject)
+      // this._addresources.addResources(resourcesObject).subscribe((res: any)=> {
+      //   if (res.status == true) {
+      //     console.log("Successfully");
+      //     this.loading = false;
+      //   }else if(res.errorOccurred == true){
+      //     this.loading = false;
+      //     console.log(res)
+      //     this.errorOccurred = true;
+      //     this.errorOccurredMessage = res.massage;
+      //   }else if (res.isExist == true ) {
+      //     console.log(res)
+      //     this.loading = false;
+
+      //     this.resourcesAlreadyExists = true;
+      //     this.resourcesErrorMessage = res.message;
+      //     this.courseId = res.lastCourseId
+      //   }
+      // },
+      // err=>(console.log(err))
+      // )
     }
   }
 

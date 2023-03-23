@@ -4,7 +4,7 @@
     <h2 style="font-size: 25px;">Courses</h2>
   </div>
   
-  <div class="container row mx-auto" *ngIf="!loading">
+  <div class="container row mx-auto" *ngIf="!loading" style="max-height: 75vh; overflow-y: auto;">
     <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-4" *ngFor="let i = index; let course of allCourses">
       <div class="card hover h-100">
         <img src={{course.coverImage}} class="card-img-top" style="height: 145px; object-fit: cover" alt="...">
@@ -25,5 +25,5 @@
       </div>
     </div>
   </div>
-  <button (click)="openSnackBar('Item added to your cart', 'close')">Open snackbar</button>
+  <!-- <button (click)="openSnackBar('Item added to your cart', 'close')">Open snackbar</button> -->
 </div>

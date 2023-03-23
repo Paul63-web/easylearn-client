@@ -1,15 +1,15 @@
 <div class="container" style="margin-top: 100px;">
   <app-loader style="margin-top: -35px;" *ngIf="loading"></app-loader>
-  <div class="container d-flex">
+  <div class="container d-flex shadowHeader">
     <h2 style="font-size: 25px; padding-left: 10px;">My Courses</h2>
-    <button mat-raised-button style="background-color: rgb(254, 101, 12); color: #fff; height: fit-content; margin-right: 10px;" class="ms-auto" routerLink="/user/add-course">
+    <button mat-raised-button style="background-color: rgb(254, 101, 12); color: #fff; height: fit-content; margin-right: 10px;" class="ms-auto mt-1" routerLink="/user/add-course">
       <mat-icon>note_add</mat-icon>
       <span style="padding: 5px; font-size: 15px;">Add new</span>
     </button>
   </div>
 
   <div *ngIf="!loading">
-    <div class="container row mx-auto" *ngIf="courses.length!=0">
+    <div class="container row mx-auto" *ngIf="courses.length!=0" style="max-height: 75vh; overflow-y: auto;">
       <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-4" *ngFor="let i = index; let course of courses">
         <div class="card hover h-100">
           <img src={{course.coverImage}} class="card-img-top" style="height: 145px; object-fit: cover;" alt="...">
@@ -21,8 +21,8 @@
               </button>
               <mat-menu #menu = "matMenu">
                 <button mat-menu-item (click)="viewResourcesDialog(course._id)">View Resources</button>
-                <button mat-menu-item (click)="openDetailsDialog(course._id)">Edit course details</button>
-                <button mat-menu-item (click)="openPriceDialog(course._id)">Edit course price</button>
+                <button mat-menu-item (click)="openDetailsDialog(course)">Edit course details</button>
+                <button mat-menu-item (click)="openPriceDialog(course)">Edit course price</button>
                 <button mat-menu-item (click)="openDeleteCourseDialog(course._id)">Delete Course</button>
               </mat-menu>
             </div>

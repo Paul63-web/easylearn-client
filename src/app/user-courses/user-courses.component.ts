@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddCourseService } from '../services/add-course.service';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { ViewResourcesComponent } from '../view-resources/view-resources.component';
 
 @Component({
   selector: 'app-user-courses',
@@ -29,6 +30,17 @@ export class UserCoursesComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     this.fetchCourses();
+  }
+
+  shadowHeader() {
+    const headerEl = document.querySelector('.shadowHeader');
+    window.addEventListener('scroll', ()=> {
+      if(window.scrollY >= 10) {
+        headerEl.classList.add('shadow');
+      }else if(window.scrollY <10) {
+        headerEl.classList.remove('shadow')
+      }
+    })
   }
 
   fetchCourses() {
@@ -63,15 +75,15 @@ export class UserCoursesComponent implements OnInit {
     let dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
   }
 
-  openDetailsDialog(_id:any) {
+  openDetailsDialog(course:any) {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = {option: 1, courseId: _id}
+    dialogConfig.data = {option: 1, course}
     let dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
   }
   openResourcesDialog(_id:any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {option: 2, courseId: _id}
-    let dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
+    let dialogRef = this.dialog.open(ViewResourcesComponent, dialogConfig);
   }
   // RTODO fix price issue
   openPriceDialog(_id:any) {

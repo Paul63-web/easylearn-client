@@ -40,7 +40,6 @@ export class DialogBoxComponent implements OnInit {
         }
       })
     }
-    console.log(this.courseId);
   }
 
   // Form Validations

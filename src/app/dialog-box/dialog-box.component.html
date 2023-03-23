@@ -20,7 +20,8 @@
   </form>
 </mat-dialog-content>
 
-<mat-dialog-content *ngIf="data.option==4 && resourceId==''" class="resources">
+<mat-dialog-content *ngIf="data.option==4 && resourceId==''" class="resources" style="min-width: 60vw; min-height: 35vw;">
+  <!-- <app-loader></app-loader>
   <span class="text-center text-danger">{{message}}</span>
   <div class="d-md-flex"></div>
   <div *ngFor="let resource of resources" class="d-flex">
@@ -34,6 +35,10 @@
       </span>
     </div>
   </div>
+  <div class="d-flex pt-1">
+    <button class="ms-auto" mat-raised-button style="background-color: rgb(254, 101, 12); color: #fff;">Add resource</button>
+  </div> -->
+  <app-view-resources></app-view-resources>
 </mat-dialog-content>
 
 <mat-dialog-content *ngIf="resourceId">

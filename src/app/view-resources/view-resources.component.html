@@ -1,0 +1,565 @@
+<!-- <app-loader *ngIf="loading"></app-loader> -->
+  <!-- <span class="text-center text-danger">{{message}}</span>
+  <div class="d-md-flex"></div>
+  <div *ngFor="let resource of resources" class="d-flex">
+    <div class="">
+      <span class="m-2 fw-bold">{{resource.resourceName}}</span> <br>
+      <small class="type">{{resource.resourceType}}</small>
+    </div>
+    <div>
+      <span class="material-symbols-outlined" type="button" (click)="editResource(resource._id)">
+        edit_square
+      </span>
+    </div>
+  </div> -->
+<div class="d-flex pt-1">
+<button class="ms-auto" mat-raised-button style="background-color: rgb(254, 101, 12); color: #fff;">Add resource</button>
+</div>
+
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="PDF">
+    <app-loader *ngIf="loading"></app-loader>
+    <div class="container row mx-auto" style="max-height: 344px; overflow-y: auto;" *ngIf="!loading">
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg
+                                style="height: 18px; width: 20px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 384 512"
+                            >
+                                <path 
+                                    d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"
+                                />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg
+                                style="height: 18px; width: 20px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 384 512"
+                            >
+                                <path 
+                                    d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"
+                                />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg
+                                style="height: 18px; width: 20px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 384 512"
+                            >
+                                <path 
+                                    d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"
+                                />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg
+                                style="height: 18px; width: 20px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 384 512"
+                            >
+                                <path 
+                                    d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"
+                                />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg
+                                style="height: 18px; width: 20px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 384 512"
+                            >
+                                <path 
+                                    d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"
+                                />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="VIDEOS">
+    <app-loader color="warn" *ngIf=loading></app-loader>
+    <div class="container row" style="max-height: 344px; overflow-y: auto;" *ngIf="!loading">
+        <div class="container pt-3 p-md-2 mb-2 col-12 col-md-3 col-lg-3" style="width: 15rem;">
+            <video style="width: 15rem; border-radius: 5px;" controls>
+                <source src="../../assets/test.mp4" type="video/mp4">
+            </video>
+            <div class="d-flex">
+                <div class="me-auto" style="height: 40px; width: 40px; border: 1px solid #595858; border-radius: 100%; background-color: #595858;">
+                    <!-- hi -->
+                </div>
+                <div class="ms-auto pt-1">
+                    <p class="text-muted" style="font-weight: 500;">Introduction to Javascript</p>
+                    <!-- <small>This video is an introduction to Javascript</small> -->
+                </div>
+            </div>
+        </div>
+        <div class="container pt-3 p-md-2 mb-2 col-12 col-md-3 col-lg-3" style="width: 15rem;">
+            <video style="width: 15rem; border-radius: 5px;" controls>
+                <source src="../../assets/test.mp4" type="video/mp4">
+            </video>
+            <div class="d-flex">
+                <div class="me-auto" style="height: 40px; width: 40px; border: 1px solid #595858; border-radius: 100%; background-color: #595858;">
+                    <!-- hi -->
+                </div>
+                <div class="ms-auto pt-1">
+                    <p class="text-muted" style="font-weight: 500;">Introduction to Javascript</p>
+                    <!-- <small>This video is an introduction to Javascript</small> -->
+                </div>
+            </div>
+        </div>
+        <div class="container pt-3 p-md-2 mb-2 col-12 col-md-3 col-lg-3" style="width: 15rem;">
+            <video style="width: 15rem; border-radius: 5px;" controls>
+                <source src="../../assets/test.mp4" type="video/mp4">
+            </video>
+            <div class="d-flex">
+                <div class="me-auto" style="height: 40px; width: 40px; border: 1px solid #595858; border-radius: 100%; background-color: #595858;">
+                    <!-- hi -->
+                </div>
+                <div class="ms-auto pt-1">
+                    <p class="text-muted" style="font-weight: 500;">Introduction to Javascript</p>
+                    <!-- <small>This video is an introduction to Javascript</small> -->
+                </div>
+            </div>
+        </div>
+        <div class="container pt-3 p-md-2 mb-2 col-12 col-md-3 col-lg-3" style="width: 15rem;">
+            <video style="width: 15rem; border-radius: 5px;" controls>
+                <source src="../../assets/test.mp4" type="video/mp4">
+            </video>
+            <div class="d-flex">
+                <div class="me-auto" style="height: 40px; width: 40px; border: 1px solid #595858; border-radius: 100%; background-color: #595858;">
+                    <!-- hi -->
+                </div>
+                <div class="ms-auto pt-1">
+                    <p class="text-muted" style="font-weight: 500;">Introduction to Javascript</p>
+                    <!-- <small>This video is an introduction to Javascript</small> -->
+                </div>
+            </div>
+        </div>
+        <div class="container pt-3 p-md-2 mb-2 col-12 col-md-3 col-lg-3" style="width: 15rem;">
+            <video style="width: 15rem; border-radius: 5px;" controls>
+                <source src="../../assets/test.mp4" type="video/mp4">
+            </video>
+            <div class="d-flex">
+                <div class="me-auto" style="height: 40px; width: 40px; border: 1px solid #595858; border-radius: 100%; background-color: #595858;">
+                    <!-- hi -->
+                </div>
+                <div class="ms-auto pt-1">
+                    <p class="text-muted" style="font-weight: 500;">Introduction to Javascript</p>
+                    <!-- <small>This video is an introduction to Javascript</small> -->
+                </div>
+            </div>
+        </div>
+        <div class="container pt-3 p-md-2 mb-2 col-12 col-md-3 col-lg-3" style="width: 15rem;">
+            <video style="width: 15rem; border-radius: 5px;" controls>
+                <source src="../../assets/test.mp4" type="video/mp4">
+            </video>
+            <div class="d-flex">
+                <div class="me-auto" style="height: 40px; width: 40px; border: 1px solid #595858; border-radius: 100%; background-color: #595858;">
+                    <!-- hi -->
+                </div>
+                <div class="ms-auto pt-1">
+                    <p class="text-muted" style="font-weight: 500;">Introduction to Javascript</p>
+                    <!-- <small>This video is an introduction to Javascript</small> -->
+                </div>
+            </div>
+        </div>
+        <div class="container pt-3 p-md-2 mb-2 col-12 col-md-3 col-lg-3" style="width: 15rem;">
+            <video style="width: 15rem; border-radius: 5px;" controls>
+                <source src="../../assets/test.mp4" type="video/mp4">
+            </video>
+            <div class="d-flex">
+                <div class="me-auto" style="height: 40px; width: 40px; border: 1px solid #595858; border-radius: 100%; background-color: #595858;">
+                    <!-- hi -->
+                </div>
+                <div class="ms-auto pt-1">
+                    <p class="text-muted" style="font-weight: 500;">Introduction to Javascript</p>
+                    <!-- <small>This video is an introduction to Javascript</small> -->
+                </div>
+            </div>
+        </div>
+        <div class="container pt-3 p-md-2 mb-2 col-12 col-md-3 col-lg-3" style="width: 15rem;">
+            <video style="width: 15rem; border-radius: 5px;" controls>
+                <source src="../../assets/test.mp4" type="video/mp4">
+            </video>
+            <div class="d-flex">
+                <div class="me-auto" style="height: 40px; width: 40px; border: 1px solid #595858; border-radius: 100%; background-color: #595858;">
+                    <!-- hi -->
+                </div>
+                <div class="ms-auto pt-1">
+                    <p class="text-muted" style="font-weight: 500;">Introduction to Javascript</p>
+                    <!-- <small>This video is an introduction to Javascript</small> -->
+                </div>
+            </div>
+        </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="LINKS">
+    <div class="container row mx-auto" style="max-height: 344px; overflow-y: auto;" *ngIf="!loading">
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2 link-card" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg 
+                                style="height: 15px; width: 15px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 640 512"
+                            >
+                                    <path 
+                                        d="M562.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L405.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C189.5 251.2 196 330 246 380c56.5 56.5 148 56.5 204.5 0L562.8 267.7zM43.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C57 372 57 321 88.5 289.5L200.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C416.5 260.8 410 182 360 132c-56.5-56.5-148-56.5-204.5 0L43.2 244.3z"
+                                    />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg 
+                                style="height: 15px; width: 15px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 640 512"
+                            >
+                                    <path 
+                                        d="M562.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L405.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C189.5 251.2 196 330 246 380c56.5 56.5 148 56.5 204.5 0L562.8 267.7zM43.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C57 372 57 321 88.5 289.5L200.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C416.5 260.8 410 182 360 132c-56.5-56.5-148-56.5-204.5 0L43.2 244.3z"
+                                    />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg 
+                                style="height: 15px; width: 15px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 640 512"
+                            >
+                                    <path 
+                                        d="M562.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L405.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C189.5 251.2 196 330 246 380c56.5 56.5 148 56.5 204.5 0L562.8 267.7zM43.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C57 372 57 321 88.5 289.5L200.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C416.5 260.8 410 182 360 132c-56.5-56.5-148-56.5-204.5 0L43.2 244.3z"
+                                    />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg 
+                                style="height: 15px; width: 15px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 640 512"
+                            >
+                                    <path 
+                                        d="M562.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L405.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C189.5 251.2 196 330 246 380c56.5 56.5 148 56.5 204.5 0L562.8 267.7zM43.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C57 372 57 321 88.5 289.5L200.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C416.5 260.8 410 182 360 132c-56.5-56.5-148-56.5-204.5 0L43.2 244.3z"
+                                    />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg 
+                                style="height: 15px; width: 15px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 640 512"
+                            >
+                                    <path 
+                                        d="M562.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L405.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C189.5 251.2 196 330 246 380c56.5 56.5 148 56.5 204.5 0L562.8 267.7zM43.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C57 372 57 321 88.5 289.5L200.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C416.5 260.8 410 182 360 132c-56.5-56.5-148-56.5-204.5 0L43.2 244.3z"
+                                    />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="p-md-2 mb-2 col-12 col-md-4 col-lg-3" style="cursor: pointer;" [matMenuTriggerFor]="menu">
+            <div class="card hover">
+                <div class="container bg-light card-img-top">
+                    <img src="../../assets/images/courses/courses_2.jpg" class="shadow-sm" style="height: 100px; width: 100%; object-fit: cover; margin-top: 13px;" alt="...">
+                </div>
+                <div class="card-body pb-0 pt-2 px-2" style="border-top: 1px solid #b4b4b4;">
+                    <div>
+                        <span class="File-svg">
+                            <svg 
+                                style="height: 15px; width: 15px; fill: #6c6b6b;"
+                                xmlns="http://www.w3.org/2000/svg" 
+                                viewBox="0 0 640 512"
+                            >
+                                    <path 
+                                        d="M562.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L405.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C189.5 251.2 196 330 246 380c56.5 56.5 148 56.5 204.5 0L562.8 267.7zM43.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C57 372 57 321 88.5 289.5L200.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C416.5 260.8 410 182 360 132c-56.5-56.5-148-56.5-204.5 0L43.2 244.3z"
+                                    />
+                            </svg>
+                        </span>
+                        <span class="text-uppercase text-muted" style="font-weight: 500; margin-left: 5px !important;">
+                            Design implentation
+                        </span>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-muted me-auto mt-1" style="font-weight: 500;">You edited this</p>
+                    </div>
+                </div>
+                <mat-menu #menu xPosition="before">
+                    <button mat-menu-item>
+                        <mat-icon>visibility</mat-icon>
+                        View
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="NOTE"> Short note </mat-tab>
+</mat-tab-group> 

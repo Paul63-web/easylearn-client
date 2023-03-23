@@ -55,6 +55,10 @@ import { AllTransactionsComponent } from './all-transactions/all-transactions.co
 import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { LoaderComponent } from './loader/loader.component';
+import { ViewResourcesComponent } from './view-resources/view-resources.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
+import { AngularUrlPreviewModule } from 'angular-url-preview';
 
 @NgModule({
   declarations: [
@@ -87,9 +91,8 @@ import { LoaderComponent } from './loader/loader.component';
     AllTransactionsComponent,
     EmptyCartComponent,
     WithdrawComponent,
-    LoaderComponent
-
-
+    LoaderComponent,
+    ViewResourcesComponent
   ],
   imports: [
     BrowserModule,
@@ -119,11 +122,9 @@ import { LoaderComponent } from './loader/loader.component';
     MatSnackBarModule,
     Angular4PaystackModule,
     Angular4PaystackModule.forRoot('pk_test_4359d1050bbf6556880c95f583094b29e9991d7d'),
-
-    // Angular4PaystackModule.forRoot('sk_test_1bd1e4d513c379cbe1a2b481b68f18e183e06867')
-
-
-
+    MatExpansionModule,
+    MatTabsModule,
+    // AngularUrlPreviewModule
   ],
   providers: [
     {
