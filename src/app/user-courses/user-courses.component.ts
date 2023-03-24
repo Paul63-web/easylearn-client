@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AddCourseService } from '../services/add-course.service';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
-import { ViewResourcesComponent } from '../view-resources/view-resources.component';
+import { ViewResourcesComponent } from '../courses-details/view-resources/view-resources.component';
+import { EditCourseDetailsComponent } from '../courses-details/edit-course-details/edit-course-details.component';
+import { EditCoursePriceComponent } from '../courses-details/edit-course-price/edit-course-price.component';
+import { DeleteCourseComponent } from '../courses-details/delete-course/delete-course.component';
 
 @Component({
   selector: 'app-user-courses',
@@ -71,31 +74,32 @@ export class UserCoursesComponent implements OnInit {
   }
   viewResourcesDialog(_id:any) {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = {option: 4, courseId: _id}
-    let dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
+    dialogConfig.data = {courseId: _id}
+    let dialogRef = this.dialog.open(ViewResourcesComponent, dialogConfig);
   }
 
   openDetailsDialog(course:any) {
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = {option: 1, course}
-    let dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
+    dialogConfig.data = {course}
+    let dialogRef = this.dialog.open(EditCourseDetailsComponent, dialogConfig);
   }
-  openResourcesDialog(_id:any) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = {option: 2, courseId: _id}
-    let dialogRef = this.dialog.open(ViewResourcesComponent, dialogConfig);
-  }
-  // RTODO fix price issue
+
+  // openResourcesDialog(_id:any) {
+  //   const dialogConfig = new MatDialogConfig();
+  //   dialogConfig.data = {option: 2, courseId: _id}
+  //   let dialogRef = this.dialog.open(ViewResourcesComponent, dialogConfig);
+  // }
+
   openPriceDialog(_id:any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {option: 3, courseId: _id}
-    let dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
+    let dialogRef = this.dialog.open(EditCoursePriceComponent, dialogConfig);
   }
 
   openDeleteCourseDialog(_id:any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {option: 5, courseId: _id}
-    let dialogRef = this.dialog.open(DialogBoxComponent, dialogConfig);
+    let dialogRef = this.dialog.open(DeleteCourseComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(()=> {
       this.fetchCourses();
     })

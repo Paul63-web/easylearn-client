@@ -55,10 +55,13 @@ import { AllTransactionsComponent } from './all-transactions/all-transactions.co
 import { EmptyCartComponent } from './user/empty-cart/empty-cart.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { LoaderComponent } from './loader/loader.component';
-import { ViewResourcesComponent } from './view-resources/view-resources.component';
+import { ViewResourcesComponent } from './courses-details/view-resources/view-resources.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { AngularUrlPreviewModule } from 'angular-url-preview';
+import { EditCourseDetailsComponent } from './courses-details/edit-course-details/edit-course-details.component';
+import { EditCoursePriceComponent } from './courses-details/edit-course-price/edit-course-price.component';
+import { DeleteCourseComponent } from './courses-details/delete-course/delete-course.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +95,10 @@ import { AngularUrlPreviewModule } from 'angular-url-preview';
     EmptyCartComponent,
     WithdrawComponent,
     LoaderComponent,
-    ViewResourcesComponent
+    ViewResourcesComponent,
+    EditCourseDetailsComponent,
+    EditCoursePriceComponent,
+    DeleteCourseComponent
   ],
   imports: [
     BrowserModule,

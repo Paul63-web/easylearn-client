@@ -1,0 +1,26 @@
+<app-loader *ngIf="loading"></app-loader>
+<h1 style="font-size: 20px; font-weight: 500;">Edit course details</h1>
+
+<p>{{data.course.courseName}}</p>
+<form class="form" [formGroup]="courseDetails">
+    <div class="form-group mb-2">
+        <label for="">Edit resource name</label>
+        <input type="text" class="form-control" formControlName="newCourseName">
+      </div>
+      <div class="form-group mb-2">
+        <label for="">Edit resource file</label>
+        <input type="file" class="form-control" name="newCourseCoverImg">
+      </div>
+    
+      <div class="form-group mb-2">
+        <label for="">Edit course description</label>
+        <textarea type="file" class="form-control" formControlName="newCourseDescription"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <button mat-raised-button style="background-color: rgb(254, 101, 12); color: #fff;" [disabled]="loading">
+            <mat-icon>save</mat-icon>
+            Save Changes
+        </button>
+      </div>
+    </form>

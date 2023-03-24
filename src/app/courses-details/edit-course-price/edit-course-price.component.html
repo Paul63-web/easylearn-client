@@ -1,0 +1,10 @@
+<h1 style="font-size: 20px; font-weight: 500;">Edit Course Price</h1>
+<form [formGroup]="coursePriceDetails">
+<div class="form-group mb-2">
+    <label for="">Edit course price</label>
+    <input type="text" class="form-control" formControlName="newCoursePrice">
+</div>
+<div class="form-group">
+    <button mat-raised-button style="background-color: rgb(254, 101, 12); color: #fff;" [disabled]="loading">Save Changes</button>
+</div>
+</form>

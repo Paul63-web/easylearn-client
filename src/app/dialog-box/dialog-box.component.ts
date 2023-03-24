@@ -29,6 +29,7 @@ export class DialogBoxComponent implements OnInit {
 
   public resourceId:any = ""
   ngOnInit(): void {
+    console.log(this.data)
     if(this.data.option == 4) {
       this._resourcesService.getCourseResources({id: this.data.courseId}).subscribe((res:any)=> {
         if(res.status == false) {
@@ -44,9 +45,9 @@ export class DialogBoxComponent implements OnInit {
 
   // Form Validations
   public courseDetails = this._formBuilder.group({
-    name: ['', Validators.required],
+    name: [this.data.course.courseName, Validators.required],
     coverImage: ['', Validators.required],
-    description: ['', Validators.required]
+    description: [this.data.course.courseDescription, Validators.required]
   })
 
   public resourceDetails = this._formBuilder.group({
