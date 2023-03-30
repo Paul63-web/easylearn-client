@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GetCoursesService } from 'src/app/services/get-courses.service';
 import { CartService } from 'src/app/services/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { EnrollCourseDetailsComponent } from '../enroll-course-details/enroll-course-details.component';
 
 
 @Component({
@@ -25,7 +27,8 @@ export class EnrollForACourseComponent implements OnInit {
   constructor(
     private _getCourses: GetCoursesService,
     private _cartService: CartService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -72,5 +75,10 @@ export class EnrollForACourseComponent implements OnInit {
     )
   }
   
-
+  courseDetails(_id: any) {
+    console.log(_id);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {courseId: _id};
+    let dialogRef = this._dialog.open(EnrollCourseDetailsComponent, dialogConfig);
+  }
 }

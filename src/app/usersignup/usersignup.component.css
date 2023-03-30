@@ -26,3 +26,12 @@
     background-color: rgb(252, 146, 107);
     cursor: no-drop;
 }
+
+/* app-navbar nav{
+    display: none !important;
+    background-color: red !important;
+} */
+
+/* ::host ::ng-deep app-navbar nav {
+    background-color: red !important;
+} */

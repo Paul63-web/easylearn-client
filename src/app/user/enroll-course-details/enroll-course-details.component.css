@@ -1,0 +1,14 @@
+.user-rating {
+    font-size: 2em;
+  }
+  
+  .user-rating .my-star {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .user-rating .full-star {
+    color: #FFD700;
+  }
+  

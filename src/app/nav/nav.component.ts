@@ -20,7 +20,7 @@ export class NavComponent implements OnInit{
   public noProfile: string = "../../assets/index.png";
   public loading: boolean = false;
   public welcomeUser: string;
-
+  public cartCount: Number = 5;
   public justUpload: FormGroup;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)

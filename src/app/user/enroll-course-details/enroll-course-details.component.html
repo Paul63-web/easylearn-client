@@ -1,0 +1,14 @@
+<div class="container" style="min-width: 60vw !important;">
+    <div class="course-details">
+        <h1 class="" style="font-size: 30px; font-weight: 700;">AngularJS</h1>
+        <p class="course-description text-muted" style="font-size: 15px; max-width: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis labore quos excepturi! Enim ex repellat distinctio qui in magni, nihil, quae dolores necessitatibus maiores aperiam dolorem? Excepturi, voluptatibus fugiat?</p>
+        <div class="user-rating">
+            <span *ngFor="let star of stars" [class.full-star]="star <= rating" (click)="rate(star)">
+                <svg class="my-star" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                    <path d="M12 2.5l-3.09 6.28L2.5 9.78l5.59 5.44L5.67 22.5l6.33-3.33 6.33 3.33-2.42-7.28 5.59-5.44L15.09 8.78 12 2.5z" fill="#FFCE00"/>
+                </svg>                  
+            </span>
+            <span><p>(4,990 ratings) 27,049 students</p></span>
+        </div>
+    </div>
+</div>

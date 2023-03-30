@@ -77,22 +77,6 @@ hr{
     background-color: rgb(17,27,80);
   }
 
-  .envent_all_view a{
-    background-color: rgb(196,77,44);
-    padding: 12px;
-    float: right;
-    margin-top: -70px;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    color: white;
-    margin-top: 60px;
-  }
-  
-  .envent_all_view a:hover{
-    background-color: rgb(9,42,206);
-    transition: all 0.5s 0s;
-  }
 }
 
 

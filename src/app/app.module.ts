@@ -62,6 +62,8 @@ import { AngularUrlPreviewModule } from 'angular-url-preview';
 import { EditCourseDetailsComponent } from './courses-details/edit-course-details/edit-course-details.component';
 import { EditCoursePriceComponent } from './courses-details/edit-course-price/edit-course-price.component';
 import { DeleteCourseComponent } from './courses-details/delete-course/delete-course.component';
+import { EnrollCourseDetailsComponent } from './user/enroll-course-details/enroll-course-details.component';
+import { MatBadgeModule } from '@angular/material/badge'
 
 @NgModule({
   declarations: [
@@ -98,7 +100,8 @@ import { DeleteCourseComponent } from './courses-details/delete-course/delete-co
     ViewResourcesComponent,
     EditCourseDetailsComponent,
     EditCoursePriceComponent,
-    DeleteCourseComponent
+    DeleteCourseComponent,
+    EnrollCourseDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -130,7 +133,7 @@ import { DeleteCourseComponent } from './courses-details/delete-course/delete-co
     Angular4PaystackModule.forRoot('pk_test_4359d1050bbf6556880c95f583094b29e9991d7d'),
     MatExpansionModule,
     MatTabsModule,
-    // AngularUrlPreviewModule
+    MatBadgeModule
   ],
   providers: [
     {
